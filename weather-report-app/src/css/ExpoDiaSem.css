@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.DiaSemanaVitrine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 120px;
+}
+
+.imgDiaDaSemana{
+    width: 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .DiaSemanaVitrine{
+        width: 153px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .DiaSemanaVitrine{
+        width: 117px;
+        padding: 10px;
+    }
+}

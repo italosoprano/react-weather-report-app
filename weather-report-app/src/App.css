@@ -4,8 +4,7 @@
 }
 
 .App-header{
-  background-color: aqua;
-  background-image: url('./componentes/bgi_sc.jpg');
+  background: linear-gradient(135deg, #0363E0, #00D8EF, #00F5B3);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -14,4 +13,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }

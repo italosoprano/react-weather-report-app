@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import Template from './componentes/template';
 
 function App() {
