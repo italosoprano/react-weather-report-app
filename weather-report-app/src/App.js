@@ -1,3 +1,4 @@
+import '../src/App.css'
 import Template from './componentes/template';
 
 function App() {

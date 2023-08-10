@@ -7,9 +7,23 @@ import Sol from '../componentes/sol.png'
 export default function Pesquisa() {
 
     const [cidade, setCidade]=useState('')
+    const [weatherForecast, setWeatherForecast]=useState(null)
 
     const handleChange = (e) =>{
         setCidade(e.target.value)
+    }
+
+    const handleSearch = () =>{
+        fetch(`http://api.weatherapi.com/v1/forecast.json?key=1cc0abe572ee47eca0a04826231008&q=${cidade}&lang=pt`)
+        .then((res)=>{
+            if(res.status == 200){
+                return res.json()
+            }
+        })
+        .then((data)=>{
+            setWeatherForecast(data)
+            console.log(weatherForecast)
+        })
     }
 
     return(
@@ -24,14 +38,14 @@ export default function Pesquisa() {
                     onChange={handleChange}
                     />
                 </form>
+                <button onClick={handleSearch}>Pesquisar</button>
             </div>
             
-
             <div className='VitrineDoTempo'>
                 <div className='ExpositorPrincipal'>
                     <div className='ContainerDiaLocal'>
                         <h2>Domingo, 28</h2>
-                        <p>Manaus, AM</p>
+                        <p>{cidade}</p>
                     </div>
                     <div className='ContainerImg'>
                         <img srcSet={Sol}/>
@@ -51,6 +65,14 @@ export default function Pesquisa() {
                     <DiaSemana/>
                 </div>
             </div>
+
+            {
+                weatherForecast ? (
+                    <div>
+                        Olá
+                    </div>
+                ):null
+            }
         </div>
     )
 }
