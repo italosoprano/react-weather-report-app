@@ -42,27 +42,17 @@ export default function Pesquisa() {
             </div>
             
             <div className='VitrineDoTempo'>
-                <div className='ExpositorPrincipal'>
-                    <div className='ContainerDiaLocal'>
-                        <h2>Domingo, 28</h2>
-                        <p>{cidade}</p>
-                    </div>
-                    <div className='ContainerImg'>
-                        <img srcSet={Sol}/>
-                    </div>
-                    <div className='ContainerTemp'>
-                        <h2 className='TempCidade'>37 graus</h2>
-                    </div>
+                <div className='ContainerDiaLocal'>
+                    <h2>Domingo, 28</h2>
+                    <p>{cidade} Manaus</p>
                 </div>
-                <div className='ContainerDiaSemana'>
-                    <h2 className='DiaSemanaTitulo'>Proximos 7 dias...</h2>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
+                <div className='ContainerImg'>
+                    <img srcSet={Sol}/>
+                    <p>Céu nublado, com chuva.</p>
+                </div>
+                <div className='ContainerTemp'>
+                    <h2 className='TempCidade'>37 graus</h2>
+                    <p>Sensação térmica: <br/> 9 bilhões de graus</p>
                 </div>
             </div>
 
@@ -76,3 +66,16 @@ export default function Pesquisa() {
         </div>
     )
 }
+
+/*
+    <div className='ContainerDiaSemana'>
+                    <h2 className='DiaSemanaTitulo'>Proximos 7 dias...</h2>
+                    <DiaSemana/>
+                    <DiaSemana/>
+                    <DiaSemana/>
+                    <DiaSemana/>
+                    <DiaSemana/>
+                    <DiaSemana/>
+                    <DiaSemana/>
+                </div>
+*/
