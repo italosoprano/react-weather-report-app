@@ -42,17 +42,18 @@ export default function Pesquisa() {
             </div>
             
             <div className='VitrineDoTempo'>
+                <div className='ContainerTemp'>
+                    <h2 className='TempCidade'>37 ºC</h2>
+                </div>
                 <div className='ContainerDiaLocal'>
-                    <h2>Domingo, 28</h2>
-                    <p>{cidade} Manaus</p>
+                    <h2>{cidade} Manaus</h2>
+                    <p>Domingo, 28</p>
                 </div>
                 <div className='ContainerImg'>
                     <img srcSet={Sol}/>
                     <p>Céu nublado, com chuva.</p>
-                </div>
-                <div className='ContainerTemp'>
-                    <h2 className='TempCidade'>37 graus</h2>
-                    <p>Sensação térmica: <br/> 9 bilhões de graus</p>
+                    <p className='Bold'><bold>Sensação térmica: </bold></p>
+                    <p>9 bilhões de graus</p>
                 </div>
             </div>
 
