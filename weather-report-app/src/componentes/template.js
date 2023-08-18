@@ -60,8 +60,36 @@ export default function Pesquisa() {
 
             {
                 weatherForecast ? (
-                    <div>
-                        Olá
+                    <div className='Main'>
+                        <div className='CaixaDePesquisa'>
+                            <form>
+                                <input 
+                                type='text' 
+                                className='InputNameCity' 
+                                placeholder='Digite uma cidade' 
+                                value={cidade}
+                                onChange={handleChange}
+                                />
+                            </form>
+                            <button onClick={handleSearch}>Pesquisar</button>
+                        </div>
+                        
+                        <div className='VitrineDoTempo'>
+                            <div className='ContainerTemp'>
+                                <h2 className='TempCidade'>{weatherForecast.current.temp_c} ºC</h2>
+                                <p>Min: 32 ºC, Max: 39ºC</p>
+                            </div>
+                            <div className='ContainerDiaLocal'>
+                                <h2>{weatherForecast.current.name}</h2>
+                                <p>Domingo, 28</p>
+                            </div>
+                            <div className='ContainerImg'>
+                                <img srcSet={Sol}/>
+                                <p>Céu nublado, com chuva.</p>
+                                <p className='Bold'><bold>Sensação térmica: </bold></p>
+                                <p>9 bilhões de ºC</p>
+                            </div>
+                        </div>
                     </div>
                 ):null
             }
