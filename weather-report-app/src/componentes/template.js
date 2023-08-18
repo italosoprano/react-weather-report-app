@@ -54,7 +54,7 @@ export default function Pesquisa() {
                     <img srcSet={Sol}/>
                     <p>Céu nublado, com chuva.</p>
                     <p className='Bold'><bold>Sensação térmica: </bold></p>
-                    <p>9 bilhões de graus</p>
+                    <p>9 bilhões de ºC</p>
                 </div>
             </div>
 
