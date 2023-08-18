@@ -57,8 +57,14 @@ export default function Pesquisa() {
                     <p>9 bilhões de ºC</p>
                 </div>
             </div>
+            
 
-            {
+        </div>
+    )
+}
+
+/*
+    {
                 weatherForecast ? (
                     <div className='Main'>
                         <div className='CaixaDePesquisa'>
@@ -93,19 +99,4 @@ export default function Pesquisa() {
                     </div>
                 ):null
             }
-        </div>
-    )
-}
-
-/*
-    <div className='ContainerDiaSemana'>
-                    <h2 className='DiaSemanaTitulo'>Proximos 7 dias...</h2>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                    <DiaSemana/>
-                </div>
 */
