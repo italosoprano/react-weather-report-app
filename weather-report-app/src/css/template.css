@@ -64,11 +64,10 @@
 
 .CaixaDePesquisa{
     width: 100vw;
-    height: 10vh;
+    height: 30vh;
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 40px 0 40px 0;
 }
 
 .CaixaDePesquisa > button {
@@ -95,6 +94,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10vh;
 }
 
 .ContainerTemp > h2 {
@@ -102,12 +102,12 @@
 }
 
 .ContainerTemp > p {
-    font-size: 1.4rem;
-    padding: 1rem;
+    font-size: 1rem;
 }
 
 .VitrineDoTempo{
     display: flex;
+    height: 70vh;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -135,7 +135,7 @@
 
 .ContainerImg{
     width: 100vw;
-    height: 60vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,8 +143,8 @@
 }
 
 .ContainerImg > img {
-    width: 50%;
-    height: 50%;
+    height: 60%;
+    width: 40%;
 }
 
 .ContainerImg > p{

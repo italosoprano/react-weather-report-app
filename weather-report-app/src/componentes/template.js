@@ -44,6 +44,7 @@ export default function Pesquisa() {
             <div className='VitrineDoTempo'>
                 <div className='ContainerTemp'>
                     <h2 className='TempCidade'>37 ºC</h2>
+                    <p>Min: 32 ºC, Max: 39ºC</p>
                 </div>
                 <div className='ContainerDiaLocal'>
                     <h2>{cidade} Manaus</h2>
