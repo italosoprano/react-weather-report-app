@@ -1,8 +1,5 @@
 .App {
   text-align: center;
-}
-
-.App-header{
   background: linear-gradient(135deg, #0363E0, #00D8EF, #00F5B3);
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,3 +12,4 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import '../css/template.css'
 import DiaSemana from '../componentes/ExpoDiaSem'
 import Sol from '../componentes/sol.png'
@@ -24,7 +24,25 @@ export default function Pesquisa() {
             setWeatherForecast(data)
             console.log(weatherForecast)
         })
+
+        
     }
+    
+    function diaSemana() {
+            const dia = new Date()
+            const diaSem = dia.getDay()
+            const diaSem2 = {
+                1:'Domingo',
+                2:'Segunda',
+                3:'Terça-Feira',
+                4:'Quarta-Feira',
+                5:'Quinta-Feira',
+                6:'Sexta-Feira',
+                7:'Sabádo',
+            }
+            return diaSem2[dia.getDay()]
+        }
+    
 
     return(
         <div className='Main'>
@@ -42,19 +60,20 @@ export default function Pesquisa() {
             </div>
             
             <div className='VitrineDoTempo'>
-                <div className='ContainerTemp'>
-                    <h2 className='TempCidade'>37 ºC</h2>
-                    <p>Min: 32 ºC, Max: 39ºC</p>
-                </div>
                 <div className='ContainerDiaLocal'>
-                    <h2>{cidade} Manaus</h2>
-                    <p>Domingo, 28</p>
+                    <h2>Cidade</h2>
+                    <p>{diaSemana()}, {new Date().getDate()}</p>
                 </div>
                 <div className='ContainerImg'>
                     <img srcSet={Sol}/>
+                </div>
+                <div className='ContainerTemp'>
+                    <h2 className='TempCidade'>37 ºC</h2>
                     <p>Céu nublado, com chuva.</p>
-                    <p className='Bold'><bold>Sensação térmica: </bold></p>
-                    <p>9 bilhões de ºC</p>
+                </div>
+                <div className='ContainerInfo'>
+                    <p className='Bold ContainerInfoSensa'>Sensação térmica: </p>
+                    <p className='ContainerInfoVal'>9 bilhões de ºC</p>
                 </div>
             </div>
             
@@ -64,39 +83,40 @@ export default function Pesquisa() {
 }
 
 /*
-    {
-                weatherForecast ? (
-                    <div className='Main'>
-                        <div className='CaixaDePesquisa'>
-                            <form>
-                                <input 
-                                type='text' 
-                                className='InputNameCity' 
-                                placeholder='Digite uma cidade' 
-                                value={cidade}
-                                onChange={handleChange}
-                                />
-                            </form>
-                            <button onClick={handleSearch}>Pesquisar</button>
-                        </div>
-                        
-                        <div className='VitrineDoTempo'>
-                            <div className='ContainerTemp'>
-                                <h2 className='TempCidade'>{weatherForecast.current.temp_c} ºC</h2>
-                                <p>Min: 32 ºC, Max: 39ºC</p>
-                            </div>
-                            <div className='ContainerDiaLocal'>
-                                <h2>{weatherForecast.current.name}</h2>
-                                <p>Domingo, 28</p>
-                            </div>
-                            <div className='ContainerImg'>
-                                <img srcSet={Sol}/>
-                                <p>Céu nublado, com chuva.</p>
-                                <p className='Bold'><bold>Sensação térmica: </bold></p>
-                                <p>9 bilhões de ºC</p>
-                            </div>
-                        </div>
-                    </div>
-                ):null
-            }
+    {weatherForecast ? (
+        <div className='Main'>
+            <div className='CaixaDePesquisa'>
+                <form>
+                    <input 
+                    type='text' 
+                    className='InputNameCity' 
+                    placeholder='Digite uma cidade' 
+                    value={cidade}
+                    onChange={handleChange}
+                    />
+                </form>
+                <button onClick={handleSearch}>Pesquisar</button>
+            </div>
+            
+            <div className='VitrineDoTempo'>
+                <div className='ContainerDiaLocal'>
+                    <h2>Cidade</h2>
+                    <p>{diaSemana()}, {new Date().getDate()}</p>
+                </div>
+                <div className='ContainerImg'>
+                    <img srcSet={Sol}/>
+                </div>
+                <div className='ContainerTemp'>
+                    <h2 className='TempCidade'>37 ºC</h2>
+                    <p>Céu nublado, com chuva.</p>
+                </div>
+                <div className='ContainerInfo'>
+                    <p className='Bold ContainerInfoSensa'>Sensação térmica: </p>
+                    <p className='ContainerInfoVal'>9 bilhões de ºC</p>
+                </div>
+            </div>
+            
+
+        </div>
+    ):null}
 */
