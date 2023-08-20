@@ -48,8 +48,7 @@ export default function Template() {
             <div className='VitrineDoTempo'>
                 <ContainerDiaLocal Cidade={weatherForecast?weatherForecast.location.name:"Manaus"}/>
                 <ContainerImg Src={weatherForecast?weatherForecast.current.condition.icon: Sol}/>
-                <ContainerTemp Temp_c={weatherForecast?weatherForecast.current.temp_c: '37'} Text={weatherForecast?weatherForecast.current.condition.text: 'Céu nublado, com chuva.'}/>
-                <ContainerInfo Sensa={weatherForecast?weatherForecast.current.feelslike_c + "ºC": '9 bilhões de ºC'}/>
+                <ContainerTemp Temp_c={weatherForecast?weatherForecast.current.temp_c: '37'} Text={weatherForecast?weatherForecast.current.condition.text: 'Céu nublado, com chuva.'} Sensa={weatherForecast?weatherForecast.current.feelslike_c + "ºC": '9 bilhões de ºC'}/>
             </div>
         </div>
     )
