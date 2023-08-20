@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.ContainerInfo {
+    height: 25%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ContainerInfoSensa{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+

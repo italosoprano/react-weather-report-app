@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.ContainerTemp{
+    height: 20%;
+    width: 100vw;
+    color: white;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContainerTemp > h2 {
+    font-size: 4.5rem;
+}
+
+.TextCidade{
+    font-size: 1.5rem;
+}

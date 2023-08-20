@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import '../css/template.css'
-import DiaSemana from '../componentes/ExpoDiaSem'
+import DiaSemana from './ExpoDiaSem'
 import Sol from '../componentes/sol.png'
+import ContainerDiaLocal from '../componentes/ContainerDiaLocal'
+import ContainerImg from '../componentes/ContainerImg'
+import ContainerTemp from '../componentes/ContainerTemp'
+import ContainerInfo from '../componentes/ContainerInfo'
 
 
-export default function Pesquisa() {
+export default function Template() {
 
     const [cidade, setCidade]=useState('')
     const [weatherForecast, setWeatherForecast]=useState(null)
@@ -24,25 +28,7 @@ export default function Pesquisa() {
             setWeatherForecast(data)
             console.log(weatherForecast)
         })
-
-        
     }
-    
-    function diaSemana() {
-            const dia = new Date()
-            const diaSem = dia.getDay()
-            const diaSem2 = {
-                1:'Domingo',
-                2:'Segunda',
-                3:'Terça-Feira',
-                4:'Quarta-Feira',
-                5:'Quinta-Feira',
-                6:'Sexta-Feira',
-                7:'Sabádo',
-            }
-            return diaSem2[dia.getDay()]
-        }
-    
 
     return(
         <div className='Main'>
@@ -60,63 +46,11 @@ export default function Pesquisa() {
             </div>
             
             <div className='VitrineDoTempo'>
-                <div className='ContainerDiaLocal'>
-                    <h2>Cidade</h2>
-                    <p>{diaSemana()}, {new Date().getDate()}</p>
-                </div>
-                <div className='ContainerImg'>
-                    <img srcSet={Sol}/>
-                </div>
-                <div className='ContainerTemp'>
-                    <h2 className='TempCidade'>37 ºC</h2>
-                    <p>Céu nublado, com chuva.</p>
-                </div>
-                <div className='ContainerInfo'>
-                    <p className='Bold ContainerInfoSensa'>Sensação térmica: </p>
-                    <p className='ContainerInfoVal'>9 bilhões de ºC</p>
-                </div>
+                <ContainerDiaLocal Cidade={weatherForecast?weatherForecast.location.name:"Manaus"}/>
+                <ContainerImg Src={weatherForecast?weatherForecast.current.condition.icon: Sol}/>
+                <ContainerTemp Temp_c={weatherForecast?weatherForecast.current.temp_c: '37'} Text={weatherForecast?weatherForecast.current.condition.text: 'Céu nublado, com chuva.'}/>
+                <ContainerInfo Sensa={weatherForecast?weatherForecast.current.feelslike_c + "ºC": '9 bilhões de ºC'}/>
             </div>
-            
-
         </div>
     )
 }
-
-/*
-    {weatherForecast ? (
-        <div className='Main'>
-            <div className='CaixaDePesquisa'>
-                <form>
-                    <input 
-                    type='text' 
-                    className='InputNameCity' 
-                    placeholder='Digite uma cidade' 
-                    value={cidade}
-                    onChange={handleChange}
-                    />
-                </form>
-                <button onClick={handleSearch}>Pesquisar</button>
-            </div>
-            
-            <div className='VitrineDoTempo'>
-                <div className='ContainerDiaLocal'>
-                    <h2>Cidade</h2>
-                    <p>{diaSemana()}, {new Date().getDate()}</p>
-                </div>
-                <div className='ContainerImg'>
-                    <img srcSet={Sol}/>
-                </div>
-                <div className='ContainerTemp'>
-                    <h2 className='TempCidade'>37 ºC</h2>
-                    <p>Céu nublado, com chuva.</p>
-                </div>
-                <div className='ContainerInfo'>
-                    <p className='Bold ContainerInfoSensa'>Sensação térmica: </p>
-                    <p className='ContainerInfoVal'>9 bilhões de ºC</p>
-                </div>
-            </div>
-            
-
-        </div>
-    ):null}
-*/
