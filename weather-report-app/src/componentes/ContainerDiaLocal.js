@@ -6,12 +6,13 @@ export default function ContainerDiaLocal(props){
     function diaSemana() {
         const dia = new Date()
         const diaSem = {
-            1: 'Domingo',
-            2: 'Segunda-feira',
-            3: 'Terça-feira',
-            4: 'Quarta-feira',
-            5: 'Quinta-feira',
-            6: 'Sexta-feira',
+            0: 'Domingo',
+            1: 'Segunda-feira',
+            2: 'Terça-feira',
+            3: 'Quarta-feira',
+            4: 'Quinta-feira',
+            5: 'Sexta-feira',
+            6: 'Sabádo'
         }
 
         return diaSem[dia.getDay()]
