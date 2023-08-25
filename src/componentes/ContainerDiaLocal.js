@@ -18,11 +18,11 @@ export default function ContainerDiaLocal(props) {
     }
 
     return (
-        <div className="ContainerDiaLocal">
-            <h2>{props.Cidade}</h2>
-            <p>
+        <div className="date-local">
+            <span className="date-local__heading">{props.Cidade}</span>
+            <span className="date-local__text">
                 {diaSemana()}, {new Date().getDate()}
-            </p>
+            </span>
         </div>
     );
 }

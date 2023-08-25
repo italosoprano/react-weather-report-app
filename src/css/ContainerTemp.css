@@ -1,0 +1,19 @@
+.weather {
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.weather__value,
+.weather__legend {
+    color: var(--accent);
+    text-align: center;
+    display: block;
+}
+.weather__value {
+    font-weight: bold;
+    font-size: 4.75rem;
+    margin: 0 0 8px;
+}
+.weather__legend {
+    font-weight: medium;
+}
