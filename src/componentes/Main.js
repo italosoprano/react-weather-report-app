@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../css/template.css';
-import DiaSemana from './ExpoDiaSem';
 import Sol from './sol.png';
 import ContainerDiaLocal from './ContainerDiaLocal';
 import ContainerImg from './ContainerImg';
 import ContainerTemp from './ContainerTemp';
-import ContainerInfo from './ContainerInfo';
 
 export default function Main() {
     const [cidade, setCidade] = useState('');
